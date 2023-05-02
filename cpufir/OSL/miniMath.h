@@ -13,10 +13,11 @@ namespace osl {
 			mul = 1. / buffSize;
 		}
 
-		void push(double v = 0.) {
+		inline double push(double v = 0.) {
 			sum += v - buff[p];
 			buff[p] = v;
 			p = (p + 1) % buffSize;
+			return v;
 		}
 
 		void resum() {
@@ -25,7 +26,7 @@ namespace osl {
 				sum += buff[i];
 		}
 
-		double get() {
+		inline double get() const {
 			return sum * mul;
 		}
 
@@ -35,6 +36,23 @@ namespace osl {
 		int buffSize;
 		double mul;
 		std::vector<double> buff;
+	};
+
+	class DeltaTimeMark {
+	public:
+		DeltaTimeMark() {
+			time_point[0] = chGetTime();
+		};
+
+		inline double get() {
+			sb = !sb;
+			time_point[sb] = chGetTime();
+			return chDurationMillis(time_point[sb], time_point[!sb]);
+		}
+
+	private:
+		bool sb = 0;
+		ch_tp time_point[2];
 	};
 
 	bool compareDistanse(vec2 v, frac l) {

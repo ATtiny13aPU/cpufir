@@ -1,6 +1,25 @@
 #pragma once
 
 namespace osl {
+
+	//Генерация по одному и тем же сидам приводит к одинаковому результату
+	double RANDT(double co, double seed) { // значения от 0 до 1 c плавующей точкой
+		co = std::sin(sin(sin(co*24122.352532 + 3523.86571) + 1.01f) / cos(co*43222.35521 +
+			sin(sin(sin(co*22122.3332 + 3523.86571) + 1.01f) / cos(co*(433422.35521 - seed) + 3523.86879)*(1312312.233423 - seed * 54.f)))*1312312.233423)*(43758.54531 + seed);
+		return(co - std::floor(co));
+	}
+
+	//Плохой генератор шума перлина, используеться в декоративных целях (например текстура земли)
+	double badPrlRand(double co, double mst, double seed) { // значения от 0 до 1 c плавующей точкой
+		return (RANDT(std::floor(co / 1.f / mst), seed) +
+			RANDT(std::floor(co / 2.f / mst + 1.45f), seed) +
+			RANDT(std::floor(co / 4.f / mst + 8.7f), seed) +
+			RANDT(std::floor(co / 8.f / mst + 65.4f), seed) +
+			RANDT(std::floor(co / 16.f / mst + 4.233f), seed) +
+			RANDT(std::floor(co / 32.f / mst + 3.1453f), seed) +
+			RANDT(std::floor(co / 64.f / mst + 15.65f), seed)) / 7.;
+	}
+
 	/*
 	for (int i1 = 0; i1 < 8; i1++) {
 		for (int i1 = 0; i1 < 2; i1++) {

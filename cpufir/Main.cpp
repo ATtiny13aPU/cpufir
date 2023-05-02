@@ -248,7 +248,7 @@ int Context::run() {
 		auto mp = mix(vec2(mnPos[0], mxPos[1]), vec2(mxPos[0], mnPos[1]), vec2(-dmPos1[0], Yd - dmPos1[1]) / vec2(Xd, Yd));
 
 		if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS) {
-			world.event_pool.push(WorldCommand::paintBlock(ivec2(mp[0], mp[1]), ivec4(0, 0, 0, 255)));
+			world.event_pool.push(WorldCommand::paintBlock(ivec2(mp[0], mp[1]), color_u32(ivec4(0, 0, 0, 255))));
 		}
 
 		static bool texture_update_mode = 1;
@@ -303,14 +303,32 @@ int Context::run() {
 			ImGui::Checkbox("Обновление текстуры", &texture_update_mode);
 			ImGui::Checkbox("Верт. синх.", &Vsync);
 
-			// Вывод FPS и времени кадра
-			ImGui::Text("fps %.1f ft %.1f", 1000. / frameTime.get(), frameTime.get());
 
-			ImGui::Text("UPS: %.0f", 1000. / world.updateTime.get());
-			ImGui::Text("-----------------------------");
 			ImGui::Text("позиция мыши: (%.0f, %.0f)", mp[0], mp[1]);
-			
 
+			// Вывод FPS и времени кадра
+			ImGui::Text("fps %.1f tpf %.1f UPS: %.0f", 1000. / frameTime.get(), frameTime.get(), 1000. / world.update_time.get());
+
+			if (ImGui::TreeNode("Бенчмарки")) {
+				const auto& tms1 = world.timemarks;
+				const auto& tms2 = world.timemarks_ll;
+				double sum = 0.;
+				for (auto i : tms1)
+					sum += i.get() / 100.;
+
+				for (int i = 0; i < tms1.size(); i++) {
+					ImGui::Text(timemarks_name[i].c_str()); 
+					ImGui::SameLine();
+					ImGui::Text(": %.1f%% \t %.1f \t %.1f", tms1[i].get() / sum, tms1[i].get(), tms2[i].get());
+				}
+
+				ImGui::TreePop();
+			}
+
+			if (ImGui::TreeNode("Счётчики")) {
+				ImGui::Text("число активных блоков: %i", world.dynamic_pool.enabled.size());
+				ImGui::TreePop();
+			}
 			ImGui::End();
 
 			// Запускаем рендер меню

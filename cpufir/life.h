@@ -6,6 +6,7 @@ class WorldCS;
 class BlockType {
 public:
 	BlockType() {}
+	std::string name;
 
 	frac32 grow_price; // стоимость постройки в единицах света
 	frac32 life_support_price; // пассивная стоимость содержания в единицах света / шаг
@@ -24,12 +25,17 @@ public:
 	};
 
 	frac32 effectivity; // особая переменная для каждого блока
+
+	frac32 probability_of_mutation_selection; // весовая доля в пуле мутации
 };
 
 // Единица генома
 class WorldCS::Mode {
 public:
-	
+	BlockType *own_transform_type;
+	std::vector<BlockType *> other_transform_type;
+	int own_genome_index;
+	std::vector<int> other_genome_index;
 };
 
 // ДНК дерева
