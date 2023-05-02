@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Библиотеки">
+      <UniqueIdentifier>{c5814647-5653-4da8-88a7-7689d07ca747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Библиотеки\JIO">
+      <UniqueIdentifier>{a4a84a9d-aab2-42cb-9f16-51490ebd9069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Библиотеки\OpenGL">
+      <UniqueIdentifier>{bcf9a52a-4f60-418a-b208-a01665fe1417}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры">
+      <UniqueIdentifier>{2f0ddf48-75d3-4a14-aa4d-a6024cde1479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Игра">
+      <UniqueIdentifier>{51beb6ad-6715-46d9-beed-c1d9de49c5e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Библиотеки\OSL">
+      <UniqueIdentifier>{ef39ec40-7972-488e-b9d9-aed7e707a63f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры\Graphics">
+      <UniqueIdentifier>{64964520-5999-40fc-9c22-a54ed3888788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Шейдеры\Graphics\world">
+      <UniqueIdentifier>{eed09186-5511-4df5-b3d2-8d9d288775f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Библиотеки\Imgui">
+      <UniqueIdentifier>{497ef9fb-95ad-4ba6-bdb6-86a208af71c4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\glad.c">
+      <Filter>Исходные файлы\Библиотеки\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_impl_opengl3.cpp">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_tables.cpp">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_widgets.cpp">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui.cpp">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_draw.cpp">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_impl_glfw.cpp">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Исходные файлы\Библиотеки\JIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>Исходные файлы\Игра</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\gl_func.h">
+      <Filter>Исходные файлы\Библиотеки\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\stb_image.h">
+      <Filter>Исходные файлы\Библиотеки\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OSL\include.h">
+      <Filter>Исходные файлы\Библиотеки\OSL</Filter>
+    </ClInclude>
+    <ClInclude Include="OSL\Randomizer.h">
+      <Filter>Исходные файлы\Библиотеки\OSL</Filter>
+    </ClInclude>
+    <ClInclude Include="OSL\Vector234.h">
+      <Filter>Исходные файлы\Библиотеки\OSL</Filter>
+    </ClInclude>
+    <ClInclude Include="OSL\typedef.h">
+      <Filter>Исходные файлы\Библиотеки\OSL</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\shad_primitive.h">
+      <Filter>Исходные файлы\Библиотеки\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OSL\miniMath.h">
+      <Filter>Исходные файлы\Библиотеки\OSL</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_impl_glfw.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_impl_opengl3.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_internal.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imstb_rectpack.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imstb_textedit.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imstb_truetype.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\customImgui.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imconfig.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui.h">
+      <Filter>Исходные файлы\Библиотеки\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="life.h">
+      <Filter>Исходные файлы\Игра</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\Graphics\world.frag">
+      <Filter>Шейдеры\Graphics\world</Filter>
+    </None>
+    <None Include="Shaders\Graphics\world.vert">
+      <Filter>Шейдеры\Graphics\world</Filter>
+    </None>
+  </ItemGroup>
+</Project>
